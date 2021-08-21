@@ -1,0 +1,79 @@
+gitlab:
+  api:
+    # Gitlab 域名 举个例子：http://gitlab.test.com 或者 http://127.0.0.1:9999
+    hostUrl: http://gitlab.test.com
+    # Gitlab 个人访问令牌，需要 api read_user read_repository 权限，在Gitlab个人设置中获取。
+    privateToken: 8TJ8gzJBEZn2zR-TesT
+tinybee:
+  # Tinybee项目的域名 举个例子：http://tinybee.com 或者 http://127.0.0.1:8080
+  domain: http://127.0.0.1:8080
+
+server:
+  port: ${port:8080}
+  undertow:
+    direct-buffers: true
+
+spring:
+  application:
+    name: gitlab-tinybee
+  profiles:
+    active: dev
+  aop:
+    proxy-target-class: true
+    auto: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/code-analysis?characterEncoding=utf8&serverTimezone=GMT%2B8
+    hikari:
+      username: root
+      password: 1234567890
+      driverClassName: com.mysql.cj.jdbc.Driver
+      max-lifetime: 86430000
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    password: 1234567890
+#    lettuce:
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        min-idle: 0
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: top.koolhaas.tinybee.domain
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /pFunYDFGMVxGwypk
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoint:
+    metrics:
+      enabled: true
+    health:
+      show-details: always
+    shutdown:
+      enabled: false
+
+jetcache:
+  statIntervalMinutes: 1
+  areaInCacheName: false
+  local:
+    default:
+      type: caffeine
+      keyConvertor: fastjson
+#  remote:
+#    default:
+#      type: redis.springdata
+#      keyConvertor: fastjson
+#      valueEncoder: java
+#      valueDecoder: java

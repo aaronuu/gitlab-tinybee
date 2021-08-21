@@ -1,0 +1,126 @@
+<!-- begin pre-loader -->
+<div class="loader">
+    <div class="h-100 d-flex justify-content-center">
+        <div class="align-self-center">
+            <img src="${ctxPath}/assets/img/loader/loader.svg" alt="loader"></div>
+    </div>
+</div>
+<!-- end pre-loader -->
+<!-- begin app-header -->
+<header class="app-header top-bar">
+    <!-- begin navbar -->
+    <nav class="navbar navbar-expand-lg">
+
+        <!-- begin navbar-header -->
+        <div class="navbar-header align-items-center d-lg-none d-block">
+            <a href="javascript:void(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
+            <a class="navbar-brand" style="font-size: 2.5rem;" href="javascript:void(0)">
+                <img src="${ctxPath}/assets/img/logo.png" style="height: 36px" class="img-fluid logo-desktop"
+                     alt="logo"/>
+                <div class="img-fluid logo-mobile"><i class="nav-icon fab fa-gofore"></i></div>
+            </a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <i class="ti ti-align-left"></i>
+        </button>
+        <!-- end navbar-header -->
+        <!-- begin navigation -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navigation d-flex">
+                <ul class="navbar-nav nav-left">
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="nav-link sidebar-toggle">
+                            <i class="ti ti-align-right"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item full-screen d-none d-lg-block" id="btnFullscreen">
+                        <a href="javascript:void(0)" class="nav-link expand">
+                            <i class="icon-size-fullscreen"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="search-box ml-auto mr-3 d-none d-xl-block">
+<!--                    <form>-->
+                        <div class="form-group">
+                            <a href="javascript:void(0)" id="search-a"> <i class="ti ti-search magnifier"></i></a>
+                            <input type="text" class="form-control" placeholder="搜索..." id="search-ajax">
+                        </div>
+<!--                    </form>-->
+                </div>
+                <ul class="navbar-nav nav-right ml-auto ml-xl-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle mr-5" href="javascript:void(0)" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-users"></i><span class="nav-label label label-sm label-secondary position-absolute top-0 ml-n2 mt-n2">${infoVo.userVos.~size}</span>
+                        </a>
+                        <div class="dropdown-menu extended animated fadeIn" aria-labelledby="navbarDropdown">
+                            <ul>
+                                <li class="dropdown-header p-3 text-white text-left bg-holder bg-overlay-primary-70" style="background-image: url(${ctxPath}/assets/img/avatar/hackerdom.jpg);"> <span class="h5 font-weight-bold"> 用户列表</span></li>
+                                <li class="dropdown-body" style="max-height: 640px;">
+                                    <ul class="scrollbar max-h-240">
+                                        <% for(user in infoVo.userVos) { %>
+                                        <li ${userLP.index % 2 == 1 ? '' : 'class="bg-warning-inverse"'}>
+                                            <a class="userInfo" href="javascript:void(0)" data-email="${user.email}">
+                                                <div class="notification d-flex flex-row align-items-center">
+                                                    <div class="notify-icon avatar avatar-md align-self-center">
+                                                        <img class="img-fluid avatar-img rounded-circle" src="${user.avatarUrl}" alt="user3">
+                                                    </div>
+                                                    <div class="notify-message">
+                                                        <p class="font-weight-bold">${user.name} (${user.position})</p>
+                                                        <small>${user.email}</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <% } %>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown user-profile">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown4"
+                           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="d-flex align-items-center text-left">
+                                <div class="mr-2">
+                                    <h6 class="mb-0">Hackerdom</h6>
+                                    <small class="d-block">Koolhaas</small>
+                                </div>
+                                <div class="avatar position-relative">
+                                    <img class="avatar-img rounded-circle" src="${ctxPath}/assets/img/avatar/hackerdom.jpg" alt="avatar-img">
+                                    <span class="bg-success user-status"></span>
+                                </div>
+
+                            </div>
+                        </a>
+                        <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
+                            <div class="px-4 py-3 bg-holder bg-overlay-primary-70"
+                                 style="background-image: url(${ctxPath}/assets/img/avatar/hackerdom.jpg);">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="mr-1">
+                                        <h5 class="text-white mb-0">Hackerdom</h5>
+                                        <small class="text-white">uuzhangyu@gmail.com</small>
+                                    </div>
+                                    <a href="#" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip"
+                                       data-placement="top" title="" data-original-title="Logout"> <i
+                                            class="zmdi zmdi-power"></i></a>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <a class="dropdown-item d-flex nav-link" href="javascript:void(0)"><i
+                                        class=" ti ti-settings pr-1 text-info"></i> 设置</a>
+                                <a class="dropdown-item d-flex nav-link" href="javascript:void(0)"><i
+                                        class="far fa-compass pr-1 text-warning"></i> 需要帮助？</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- end navigation -->
+    </nav>
+    <!-- end navbar -->
+</header>
+<!-- end app-header -->

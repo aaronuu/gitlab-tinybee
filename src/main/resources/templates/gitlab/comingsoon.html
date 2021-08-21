@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc."/>
+    <meta name="author" content="Potenza Global Solutions"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>稍后就来 ｜ Tinybee</title>
+    <% include("./inc/header.html"){} %>
+</head>
+
+<body class="bg-white">
+<!-- begin app -->
+<div class="app">
+    <!-- begin app-wrap -->
+    <div class="app-wrap">
+        <!-- begin pre-loader -->
+        <div class="loader">
+            <div class="h-100 d-flex justify-content-center">
+                <div class="align-self-center">
+                    <img src="${ctxPath}/assets/img/loader/loader.svg" alt="loader">
+                </div>
+            </div>
+        </div>
+        <!-- end pre-loader -->
+        <!--start login contant-->
+        <div class="app-contant">
+            <div class="bg-white comingsoon">
+                <div class="container p-0">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6 align-self-center">
+                            <div class="d-flex align-items-center ">
+                                <div class="comingsoon-wrap w-100">
+                                    <div class="row no-gutters align-items-center justify-content-center">
+                                        <div class="col-md-10 text-center mb-4">
+                                            <!-- Coming soon text -->
+                                            <div class="px-5 mt-3">
+                                                <h2 class="display-3">马上就来</h2>
+                                                <span>功能开发中，给我点时间，我很快。。。</span>
+                                            </div>
+                                            <!-- Count down -->
+                                            <ul class="my-5 text-center list-inline">
+                                                <li class="list-inline-item mx-4">
+                                                    <p class="display-3 text-primary" id="days"></p> <span
+                                                        class="font-20"> 天</span>
+                                                </li>
+                                                <li class="list-inline-item mx-4">
+                                                    <p class="display-3 text-primary" id="hours"></p> <span
+                                                        class="font-20"> 时</span>
+                                                </li>
+                                                <li class="list-inline-item mx-4">
+                                                    <p class="display-3 text-primary" id="minutes"></p> <span
+                                                        class="font-20"> 分</span>
+                                                </li>
+                                                <li class="list-inline-item mx-4">
+                                                    <p class="display-3 text-primary" id="seconds"></p> <span
+                                                        class="font-20"> 秒</span>
+                                                </li>
+                                            </ul>
+                                            <!-- newsletter -->
+                                            <div class="row no-gutters">
+                                                <div class="col-md-7 mx-auto">
+                                                    <p>提供您的电子邮件地址&我们将通知您当网站准备好。</p>
+                                                    <form class="px-5 mt-3">
+                                                        <input type="email" class="form-control" placeholder="请输入您的邮箱">
+                                                    </form>
+                                                    <div class="mt-2"><a href="${ctxPath}/" class="btn btn-light">返回首页</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 align-self-end">
+                            <img class="img-fluid" src="${ctxPath}/assets/img/bg/coming-soon-bg.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end login contant-->
+    </div>
+    <!-- end app-wrap -->
+</div>
+<!-- end app -->
+
+
+<!--=================================
+Java-script -->
+
+<!-- JS Global Compulsory (Do not remove)-->
+<script src="${ctxPath}/assets/js/jquery-3.4.1.min.js"></script>
+<script src="${ctxPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
+<script src="${ctxPath}/assets/js/popper/popper.min.js"></script>
+<script src="${ctxPath}/assets/js/bootstrap/bootstrap.min.js"></script>
+
+<!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+<script src="${ctxPath}/assets/js/metisMenu/metisMenu.min.js"></script>
+<script src="${ctxPath}/assets/js/apexcharts/apexcharts.min.js"></script>
+<script src="${ctxPath}/assets/js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- Template Scripts (Do not remove)-->
+<script src="${ctxPath}/assets/js/app.js"></script>
+<script>
+    var baseUrl = '${ctxPath}';
+    var startTime = '123';
+    var endTime = '123';
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="zhangyu"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Home ｜ Tinybee</title>
+    <% include("./inc/header.html"){} %>
+</head>
+
+<body>
+<!-- begin app -->
+<div class="app">
+    <!-- begin app-wrap -->
+    <div class="app-wrap">
+        <% include("./inc/app-header.html"){} %>
+        <!-- begin app-container -->
+        <div class="app-container">
+            <% include("./inc/aside.html"){} %>
+            <!-- begin app-main -->
+            <div class="app-main" id="main">
+                <!-- begin container-fluid -->
+                <div class="container-fluid">
+                    <!-- begin row -->
+                    <div class="row">
+                        <div class="col-md-12 mb-2">
+                            <!-- begin page title -->
+                            <div class="d-block d-sm-flex flex-nowrap align-items-center">
+                                <div class="page-title mb-2 mb-sm-0">
+                                    <h1>用户动态</h1>
+                                    <p>数据<span class="text-primary">早8点～晚10点，每30分钟</span>更新一次</p>
+                                </div>
+                                <div class="ml-auto d-flex align-items-center">
+                                    <nav>
+                                        <ol class="breadcrumb p-0 m-b-0">
+                                            <li class="breadcrumb-item">
+                                                <a href="${ctxPath}/"><i class="ti ti-home"></i></a>
+                                            </li>
+                                            <li class="breadcrumb-item">项目动态</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!-- end page title -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <div class="card card-statistics">
+                                <div class="card-header">
+                                    <div class="card-heading">
+                                        <h5 class="card-title">数据表</h5>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped mb-0">
+                                            <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">序号</th>
+                                                <th scope="col">项目名称</th>
+                                                <th scope="col">参与用户</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <% for(project in projects) { %>
+                                            <tr>
+                                                <td>${projectLP.index}</td>
+                                                <td><a href="${project.webUrl}" target="_blank"
+                                                       class="btn btn-xs btn-round btn-inverse-primary">${project.name}</a>
+                                                </td>
+                                                <td class="pl-4">
+                                                    <div class="avatar-group">
+                                                        <% if(project.users.~size > 0) { %>
+                                                        <% for(u in project.users) { %>
+                                                        <div class="avatar">
+                                                            <a class="tooltip-wrapper" data-toggle="tooltip"
+                                                               data-placement="top" title="${u.username} ${u.email}"
+                                                               href="#"> <img class="img-fluid rounded-circle"
+                                                                              src="${u.avatarUrl}" alt="user"></a>
+                                                        </div>
+                                                        <% } %>
+                                                        <% } else { %>
+                                                        -
+                                                        <% } %>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <% } %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container-fluid -->
+            </div>
+            <!-- end app-main -->
+        </div>
+        <!-- end app-container -->
+        <% include("./inc/footer.html"){} %>
+    </div>
+    <!-- end app-wrap -->
+</div>
+
+<!-- end app -->
+<script src="${ctxPath}/assets/js/jquery-3.4.1.min.js"></script>
+<script src="${ctxPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
+<script src="${ctxPath}/assets/js/popper/popper.min.js"></script>
+<script src="${ctxPath}/assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="${ctxPath}/assets/js/metisMenu/metisMenu.min.js"></script>
+<script src="${ctxPath}/assets/js/apexcharts/apexcharts.min.js"></script>
+<script src="${ctxPath}/assets/js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="${ctxPath}/assets/js/datepicker/bootstrap-datepicker.min.js"></script>
+<script src="${ctxPath}/assets/js/toastr/toastr.min.js"></script>
+<script src="${ctxPath}/assets/js/app.js"></script>
+<script>
+    var baseUrl = '${ctxPath}';
+    var startTime = '${startTime}';
+    var endTime = '${endTime}';
+</script>
+</body>
+</html>

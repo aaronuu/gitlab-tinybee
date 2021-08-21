@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="zhangyu"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Home ｜ Tinybee</title>
+    <% include("./inc/header.html"){} %>
+</head>
+
+<body>
+<!-- begin app -->
+<div class="app">
+    <!-- begin app-wrap -->
+    <div class="app-wrap">
+        <% include("./inc/app-header.html"){} %>
+        <!-- begin app-container -->
+        <div class="app-container">
+            <% include("./inc/aside.html"){} %>
+            <!-- begin app-main -->
+            <div class="app-main" id="main">
+                <!-- begin container-fluid -->
+                <div class="container-fluid">
+                    <!-- begin row -->
+                    <div class="row">
+                        <div class="col-md-12 mb-2">
+                            <!-- begin page title -->
+                            <div class="d-block d-sm-flex flex-nowrap align-items-center">
+                                <div class="page-title mb-2 mb-sm-0">
+                                    <h1>用户动态</h1>
+                                    <p>数据<span class="text-primary">早8点～晚0点，每15分钟</span>更新一次</p>
+                                </div>
+                                <div class="ml-auto d-flex align-items-center">
+                                    <nav>
+                                        <ol class="breadcrumb p-0 m-b-0">
+                                            <li class="breadcrumb-item">
+                                                <a href="${ctxPath}/"><i class="ti ti-home"></i></a>
+                                            </li>
+                                            <li class="breadcrumb-item">用户动态</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!-- end page title -->
+                        </div>
+                    </div>
+                    <!-- end row -->
+                    <div class="row">
+                        <div class="col-xl-4 mb-30 datepicker-contant">
+                            <div class="card card-statistics mb-30">
+                                <div class="card-body datepicker-form">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control range-from" name="from" id="startTime">
+                                        <span class="input-group-addon"><i class="fas fa-minus"></i></span>
+                                        <input class="form-control range-to" type="text" name="to" id="endTime">
+                                        <div class="btn-group mb-2 mr-2 mb-xl-0 mr-xl-0 dropright" style="margin-left: 10px">
+                                            <button class="btn btn-primary" id="getData" style="margin-left: 10px"><i class="fas fa-search"></i></button>
+                                            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="javascript:query(-1)">本周</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="javascript:query(15)">15天</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="javascript:query(30)">30天</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 mb-30">
+                            <div class="card card-statistics border-0 shadow-none">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center w-100">
+                                        <div class="mr-3">
+                                            <h3 class="mb-0">${infoVo.addition}</h3>
+                                            <p>新增代码(行) <i class="fe fe-trending-up text-primary font-md ml-2"></i></p>
+                                        </div>
+                                        <div class="avatar-type avatar-type-lg bg-primary-inverse ml-auto">
+                                            <i class="fas fa-cat text-primary"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 mb-30">
+                            <div class="card card-statistics border-0 shadow-none">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center w-100">
+                                        <div class="mr-3">
+                                            <h3 class="mb-0">${infoVo.deletion}</h3>
+                                            <p>删除代码(行) <i class="fe fe-trending-down text-primary font-md ml-2"></i></p>
+                                        </div>
+                                        <div class="avatar-type avatar-type-lg bg-primary-inverse ml-auto">
+                                            <i class="fas fa-dog text-primary"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 mb-30">
+                            <div class="card card-statistics border-0 shadow-none">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center w-100">
+                                        <div class="mr-3">
+                                            <h3 class="mb-0">${infoVo.total}</h3>
+                                            <p>总计(行) <i class="fe fe-activity text-primary font-md ml-2"></i></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- begin row -->
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <div class="card card-statistics">
+                                <div class="card-header">
+                                    <div class="card-heading">
+                                        <h5 class="card-title">数据表</h5>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover mb-0">
+                                            <thead class="thead-primary">
+                                            <tr>
+                                                <th scope="col">序号</th>
+                                                <th scope="col">头像</th>
+                                                <th scope="col">用户名</th>
+                                                <th scope="col">邮箱</th>
+                                                <th scope="col">新增代码(行)  <i class="fas fa-arrow-circle-down"></i></th>
+                                                <th scope="col">删除代码(行)</th>
+                                                <th scope="col">总计(行)</th>
+                                                <th scope="col">项目</th>
+                                                <th scope="col">最后提交时间</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <% for(user in infoVo.userVos) { %>
+                                            <tr>
+                                                <td>${userLP.index}</td>
+                                                <td>
+                                                    <div class="avatar avatar-sm">
+                                                        <img class="img-fluid rounded-circle mCS_img_loaded" src="${user.avatarUrl}" alt="user">
+                                                    </div>
+                                                </td>
+                                                <td><a href="${ctxPath}/user/${user.email}/info" class="btn btn-xs btn-round btn-inverse-primary">${user.name} (${user.position})</a></td>
+                                                <td>${user.email}</td>
+                                                <td>${user.addition}</td>
+                                                <td>${user.deletion}</td>
+                                                <td>${user.total}</td>
+                                                <td>
+                                                    <% if(user.projects.~size > 0) { %>
+                                                    <% for(p in user.projects) { %>
+                                                    <a href="${p.webUrl}/commits/${p.branche}" target="_blank"
+                                                       class="btn btn-xs btn-round btn-inverse-primary">${p.name}</a>
+                                                    <% } %>
+                                                    <% } else { %>
+                                                    -
+                                                    <% } %>
+                                                </td>
+                                                <td><i class="far fa-clock mr-1 text-primary"></i>${user.lastCommitDateStr}</td>
+                                            </tr>
+                                            <% } %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container-fluid -->
+            </div>
+            <!-- end app-main -->
+        </div>
+        <!-- end app-container -->
+        <% include("./inc/footer.html"){} %>
+    </div>
+    <!-- end app-wrap -->
+</div>
+
+<!-- end app -->
+<script src="${ctxPath}/assets/js/jquery-3.4.1.min.js"></script>
+<script src="${ctxPath}/assets/js/jquery-ui/jquery-ui.min.js"></script>
+<script src="${ctxPath}/assets/js/popper/popper.min.js"></script>
+<script src="${ctxPath}/assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="${ctxPath}/assets/js/metisMenu/metisMenu.min.js"></script>
+<script src="${ctxPath}/assets/js/apexcharts/apexcharts.min.js"></script>
+<script src="${ctxPath}/assets/js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="${ctxPath}/assets/js/datepicker/bootstrap-datepicker.min.js"></script>
+<script src="${ctxPath}/assets/js/toastr/toastr.min.js"></script>
+<script src="${ctxPath}/assets/js/app.js"></script>
+<script>
+    var baseUrl = '${ctxPath}';
+    var startTime = '${startTime}';
+    var endTime = '${endTime}';
+    function query(count) {
+        window.location.href = baseUrl + "/data/" + count;
+    }
+    $(function () {
+        $("#getData").click(function () {
+            $(this).attr("disabled", "disabled");
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-center",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": 300,
+                "hideDuration": 1000,
+                "timeOut": 60000,
+                "extendedTimeOut": 1000,
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr["success"]("正在努力统计数据，请您耐心等待。")
+            window.location.href = baseUrl + "/?startTime=" + $('#startTime').val() + "&endTime=" + $('#endTime').val();
+        });
+
+        $("#search-a").keydown(function (event) {
+            var _this = $(this);
+            var name = _this.val();
+            if (event.keyCode == 13) {
+                $.get(baseUrl + "/user/" + name + "/base", function (d) {
+                    if (d.success) {
+                        window.location.href = baseUrl + "/user/" + d.data.email + "/info";
+                    } else {
+                        _this.val("");
+                    }
+                });
+            }
+        });
+
+        $("#search-ajax").keydown(function (event) {
+            var _this = $(this);
+            var name = _this.val();
+            if (event.keyCode == 13) {
+                $.get(baseUrl + "/user/" + name + "/base", function (d) {
+                    if (d.success) {
+                        window.location.href = baseUrl + "/user/" + d.data.email + "/info";
+                    } else {
+                        _this.val("");
+                    }
+                });
+            }
+        });
+
+        $(".userInfo").click(function () {
+            window.location.href = baseUrl + "/user/" + $(this).data("email") + "/info";
+        });
+
+    });
+</script>
+<script src="${ctxPath}/assets/js/sidebar.js"></script>
+</body>
+</html>
