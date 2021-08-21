@@ -6,7 +6,7 @@ import top.koolhaas.tinybee.domain.CaHoliday;
 /**
  * 法定节假日 Mapper
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 public interface CaHolidayMapper extends BaseMapper<CaHoliday> {
 }

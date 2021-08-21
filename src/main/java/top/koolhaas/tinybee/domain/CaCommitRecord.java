@@ -18,7 +18,7 @@ import java.util.List;
  * 用户每天提交记录
  * </p>
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

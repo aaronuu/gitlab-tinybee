@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 法定节假日 服务类
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 public interface CaHolidayRepository extends IService<CaHoliday> {
 

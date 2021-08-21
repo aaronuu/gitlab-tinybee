@@ -7,7 +7,7 @@ import top.koolhaas.tinybee.generator.generator.config.po.TableInfo;
  * 名称转换接口类
  *
  * @author hubin
- * @since 2017-01-20
+ * @since 2021/08/21
  */
 public interface INameConvert {
 

@@ -6,7 +6,7 @@ import top.koolhaas.tinybee.generator.generator.config.rules.IColumnType;
  * 数据库字段类型转换
  *
  * @author hubin
- * @since 2017-01-20
+ * @since 2021/08/21
  */
 public interface ITypeConvert {
 

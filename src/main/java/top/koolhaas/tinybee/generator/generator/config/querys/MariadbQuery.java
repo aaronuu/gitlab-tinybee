@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * MySql 表数据查询
  *
  * @author hubin
- * @since 2018-01-16
+ * @since 2021/08/21
  */
 public class MariadbQuery extends AbstractDbQuery {
 

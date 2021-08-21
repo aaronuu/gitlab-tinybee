@@ -6,7 +6,7 @@ import top.koolhaas.tinybee.domain.CaProject;
 /**
  * 项目 服务类
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 public interface CaProjectRepository extends IService<CaProject> {
     String nextIdentity();

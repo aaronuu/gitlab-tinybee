@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * 用户每天提交记录 服务实现类
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 @Service
 public class CaCommitRecordRepositoryImpl extends ServiceImpl<CaCommitRecordMapper, CaCommitRecord> implements CaCommitRecordRepository {

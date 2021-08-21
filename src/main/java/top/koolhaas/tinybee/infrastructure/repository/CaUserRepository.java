@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 用户 服务类
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 public interface CaUserRepository extends IService<CaUser> {
     String nextIdentity();

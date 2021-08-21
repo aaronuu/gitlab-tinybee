@@ -13,7 +13,7 @@ import java.util.Map;
  * 表字段信息
  *
  * @author YangHu
- * @since 2016-12-03
+ * @since 2021/08/21
  */
 @Data
 @Accessors(chain = true)

@@ -4,7 +4,7 @@ package top.koolhaas.tinybee.generator.generator.config.rules;
  * 数据库时间类型 到 实体类时间类型 对应策略
  *
  * @author miemie
- * @since 2018/5/22
+ * @since 2021/08/21
  */
 public enum DateType {
     /**

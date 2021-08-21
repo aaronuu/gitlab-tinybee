@@ -17,7 +17,7 @@ import java.util.stream.IntStream;
  * 表信息，关联到当前字段信息
  *
  * @author YangHu
- * @since 2016/8/30
+ * @since 2021/08/21
  */
 @Data
 @Accessors(chain = true)

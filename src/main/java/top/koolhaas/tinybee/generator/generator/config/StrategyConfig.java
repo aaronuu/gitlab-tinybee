@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
 /**
  * 策略配置项
  *
- * @author YangHu, tangguo, hubin
- * @since 2016/8/30
+ * @author hackerdom
+ * @since 2021/08/21
  */
 @Data
 @Accessors(chain = true)

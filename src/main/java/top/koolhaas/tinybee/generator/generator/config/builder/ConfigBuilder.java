@@ -21,8 +21,8 @@ import java.util.*;
 /**
  * 配置汇总 传递给文件生成工具
  *
- * @author YangHu, tangguo, hubin
- * @since 2016-08-30
+ * @author hackerdom
+ * @since 2021/08/21
  */
 public class ConfigBuilder {
 

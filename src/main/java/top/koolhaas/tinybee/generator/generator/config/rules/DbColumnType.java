@@ -4,7 +4,7 @@ package top.koolhaas.tinybee.generator.generator.config.rules;
  * 表字段类型
  *
  * @author hubin
- * @since 2017-01-11
+ * @since 2021/08/21
  */
 public enum DbColumnType implements IColumnType {
     // 基本类型

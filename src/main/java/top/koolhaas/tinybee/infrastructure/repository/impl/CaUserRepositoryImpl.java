@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 用户 服务实现类
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 @Service
 public class CaUserRepositoryImpl extends ServiceImpl<CaUserMapper, CaUser> implements CaUserRepository {

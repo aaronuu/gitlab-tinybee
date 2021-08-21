@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 法定节假日 服务实现类
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 @Service
 public class CaHolidayRepositoryImpl extends ServiceImpl<CaHolidayMapper, CaHoliday> implements CaHolidayRepository {

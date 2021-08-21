@@ -6,7 +6,7 @@ import top.koolhaas.tinybee.domain.CaUser;
 /**
  * 用户 Mapper
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 public interface CaUserMapper extends BaseMapper<CaUser> {
 }

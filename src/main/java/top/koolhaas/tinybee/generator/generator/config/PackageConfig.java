@@ -10,8 +10,8 @@ import java.util.Map;
 /**
  * 跟包相关的配置项
  *
- * @author YangHu, tangguo, hubin
- * @since 2016-08-30
+ * @author hackerdom
+ * @since 2021/08/21
  */
 
 @Data

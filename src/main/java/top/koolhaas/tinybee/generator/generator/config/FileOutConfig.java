@@ -8,7 +8,7 @@ import lombok.experimental.Accessors;
  * 输出文件配置
  *
  * @author hubin
- * @since 2017-01-18
+ * @since 2021/08/21
  */
 @Data
 @Accessors(chain = true)

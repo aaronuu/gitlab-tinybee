@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 用户每天提交记录 Mapper
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 public interface CaCommitRecordMapper extends BaseMapper<CaCommitRecord> {
 

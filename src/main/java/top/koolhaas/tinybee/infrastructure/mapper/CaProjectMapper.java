@@ -6,7 +6,7 @@ import top.koolhaas.tinybee.domain.CaProject;
 /**
  * 项目 Mapper
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 public interface CaProjectMapper extends BaseMapper<CaProject> {
 }

@@ -11,7 +11,7 @@ import java.util.Arrays;
  * 从数据库表到文件的命名策略
  *
  * @author YangHu, tangguo
- * @since 2016/8/30
+ * @since 2021/08/21
  */
 public enum NamingStrategy {
     /**

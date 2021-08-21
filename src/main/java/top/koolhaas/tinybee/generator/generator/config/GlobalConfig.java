@@ -9,7 +9,7 @@ import lombok.experimental.Accessors;
  * 全局配置
  *
  * @author hubin
- * @since 2016-12-02
+ * @since 2021/08/21
  */
 @Data
 @Accessors(chain = true)

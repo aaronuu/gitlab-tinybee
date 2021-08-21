@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 用户每天提交记录 服务类
  *
- * @author yu.zhang
+ * @author hackerdom
  */
 public interface CaCommitRecordRepository extends IService<CaCommitRecord> {
 

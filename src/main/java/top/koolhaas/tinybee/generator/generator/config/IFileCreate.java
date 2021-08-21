@@ -9,7 +9,7 @@ import java.io.File;
  * 文件覆盖接口
  *
  * @author hubin
- * @since 2018-08-07
+ * @since 2021/08/21
  */
 public interface IFileCreate {
 
