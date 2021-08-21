@@ -43,6 +43,12 @@ spring:
       password: 1234567890
 ```
 
+#### 启动项目
+
+1. 编译项目 `clean install -Dmaven.test.skip=true` ；
+2. 在 `target` 目录中找到 `gitlab-tinybee-1.0-SNAPSHOT.jar` ；
+3. 执行 `java -jar gitlab-tinybee-1.0-SNAPSHOT.jar` 本地浏览器访问：http://127.0.0.1:8080 即可。
+
 #### 如何获取Gitlab访问令牌
 ![gitlab2.png](https://koolhaas.top/img/gitlab3.png)
 
